@@ -1,0 +1,112 @@
+{% extends "public/templates/public_template.html" %}
+
+{% block title %}IFC prüfen{% endblock %}
+
+{% block main %}
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+	  <h1>IFC Datei prüfen</h1>
+	  <hr>
+	</div>
+  </div>
+</div>
+
+<div class="container-sm">
+	{% if not download %}
+	<div class="row">
+		<div class="col">
+		<form action="/pruefen" method="POST" enctype="multipart/form-data">
+			<div class="form-group">
+
+			<label>Tabellen Datei auswählen</label>
+				<div class="custom-file">
+					<input type="file" class="custom-file-input" name="tabelle" accept=
+					".csv, .xlsx" id="data-pruefen">
+					<label class="custom-file-label" for="image">Wähle csv/ xlsx ...</label>
+				</div>
+
+			<label>IFC Modell Datei auswählen</label>
+				<div class="custom-file">
+					<input type="file" class="custom-file-input" name="ifc" accept=
+					".ifc" id="ifc">
+					<label class="custom-file-label" for="image">Wähle IFC...</label>
+				</div>
+			</div>
+
+			{% if error_text %}
+			<div class="alert alert-danger alert-dismissible fade show" role="alert">
+				<strong>Warnung!</strong> {{ error_text }}.
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+
+			<script>
+				$('.alert').alert()
+			</script>
+			{% endif %}
+
+			<button type="submit" class="btn btn-secondary">Prüfen</button>
+		</form>
+		</div>
+	</div>
+	
+	{% else %}
+	<div class="row">
+		<div class="col">
+			<form autocomplete="off" action="/download" method="POST">
+				<input type="hidden" id="bcfdata" name="bcfdata" value="{{ bcfzip64 }}"> 
+				<button type="submit" class="btn btn-secondary">Download BCF</button>
+			</form>
+		</div>
+	</div>
+	<hr>
+
+	{% if issues %}
+	<div class="alert alert-danger alert-dismissible fade show" role="alert">
+		<strong>Warnung!</strong> Es sind Probleme aufgetreten.
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		  <span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+
+	{% else %}
+	<div class="alert alert-warning alert-dismissible fade show" role="alert">
+		<strong>Achtung!</strong> Keine Probleme gefunden, aber es könnten Bennenungsfehler vorhanden sein.
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		  <span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+
+	<script>
+		$('.alert').alert()
+	</script>
+	{% endif %}
+
+	<hr>
+	<table class="table table-hover">
+		<thead>
+		  <tr>
+			<th scope="col">#</th>
+			<th scope="col">Objekt</th>
+			<th scope="col">GUID</th>
+			<th scope="col">Kommentar</th>
+		  </tr>
+		</thead>
+		<tbody>
+		  {% for elem in issues %}
+		  <tr>
+			<th scope="row">{{ loop.index }}</th>
+			<td>{{ elem ['name'] }}</td>
+			<td>{{ elem ['guid'] }}</td>
+			<td>{{ elem ['comment'] }}</td>
+		  </tr>
+		  {% endfor %}
+		</tbody>
+	</table>
+	{% endif %}
+</div>
+
+{% endblock %}

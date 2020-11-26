@@ -1,0 +1,72 @@
+{% extends "public/templates/public_template.html" %}
+
+{% block title %}mvdXML erstellen{% endblock %}
+
+{% block main %}
+
+<div class="hero-image">
+	<div class="hero-text">
+	  <h1>ILC</h1>
+	  <p>Informationslieferungscontrolling</p>
+	</div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+	  <h1>Das Tool</h1>
+	  <hr>
+	</div>
+  </div>
+</div>
+
+<div class="container-sm">
+<form action="/tool" method="POST" enctype="multipart/form-data">
+
+	<div class="item">
+		<img src="{{ url_for('static', filename='img/gesamtprozess.jpg')}}" class="img-fliud" width="100%"/>
+	</div>
+
+	<p class="text-left">Eine Tabelle im Datenformat XLSX oder CSV wird hochgeladen und dessen Inhalte gelesen. Aus den Tabelleninhalten wird eine MVD (mvdXML) geschrieben. Die mvdXML bildet zusammen mit einem IFC Modell die Grundlage für den Prüfprozess. Das Resultat ist ein Prüfbericht im Datenformat BCF. Im gesamten Prozess werden nur offene Formate benutzt, eine Rückführung in die Autorensoftware ist, sofern von der Autorensoftware unterstützt, jederzeit möglich.</p>
+
+	<div class="circle">Die Datenbank</div>
+
+	<p class="text-left">Die Darstellung der einzelnen spezifischen Prozesse einer BIM-Anwendung erfolgt als Prozessdiagramm und/oder Interaktionsplan mit Transaktionsdiagramm. Die Darstellungsarten sind teilweise kom-plementär: Innerhalb eines bestimmten betrieblichen Kontextes kann es daher sinnvoll sein, mehrere Darstellungsarten anzuwenden. Die Auswahl der Darstellung der BIM-Anwendung ist im Einzelfall zu entscheiden.
+		Der Prozess lässt sich als BPMN Diagramm abbilden. 
+	</p>
+
+	<div class="item">
+		<img src="{{ url_for('static', filename='img/tabellenausschnitt.png')}}" class="img-fliud" width="100%"/>
+	</div>
+
+	<p class="text-left">Passend zu dem Diagramm gibt es Tabellen deren Struktur die des Diagramms wiederspiegeln. Verschiedenen Prozessverantwortlichen werden Prozesse zugeordnet. Im folgenden wird die Tabelle detaillierter, da sie das IFC Objekt definiert und zugehörige Property Sets, Properties und ggf. Wertedefinitionen abbildet. Diese werden für das Schreiben einer mvdXML benötigt.</p>
+
+	<div class="item">
+		<img src="{{ url_for('static', filename='img/Bild1.png')}}" class="img-fliud" width="100%"/>
+	</div>
+
+
+	<div class="circle">Der Generator</div>
+
+	<p class="text-left">Der RWTH Generator ist ein Tool, welches aud mvdXML PropertySet Templates neue mvdXML Dateien erstellt. Dafür werden die Inhalte der vorgestellten Tabellen der Bergischen Universität Wuppertal genutzt. Grundsätzlich ist das Tool auf diese Tabellen und ihren Informationsgehalt angepasst, außerhalb von Property Sets, Properties und ggf. Wertedefinition können keine mvdXML erstellt werden. Alle Daten basieren auf einem offenen Standard und offenen Schnittstellen.</p>
+
+	<div class="item">
+		<img src="{{ url_for('static', filename='img/generatorablauf.png')}}" class="img-fliud" width="100%"/>
+	</div>
+
+	<p class="text-left">Für eine Tabelle wird nicht zwangsweise eine mvdXML erzeugt. Um mvdXMLs in den Prozess integrieren zu können, werden diese anhand sich verändernden Prozessverantwortlichen erstellt. Dabei wird die Reihenfolge der Tabelle beachtet. Immer wenn sich die Prozessverantwortlichkeit ändern sollte, wird eine neue mvdXML erstellt.</p>
+
+	<div class="item">
+		<img src="{{ url_for('static', filename='img/zerschneiden.png')}}" class="img-fliud" width="100%"/>
+	</div>
+
+
+	<div class="circle">Der Validator</div>
+
+	<p class="text-left">Der RWTH Validator ist ein Tool, welches ein IFC Modell mit einer mvdXML prüfen kann. Der mvdXML Checker ist nicht direkt als Backend hinterlegt sondern wird über seine API genutzt. Die Prüfung besteht aus zwei Schritte, der Vorprüfung, bei der die zu prüfenden IFC Objekte auf eine VOrbedingung hin geprüft werden. Nur IFC Objekte, welche diese VOrbedingung erfüllen, werden in der Hauptprüfung auf die eigentlich definierten Merkmale und Werte überprüft.</p>
+
+	<div class="item">
+		<img src="{{ url_for('static', filename='img/validatorablauf.png')}}" class="img-fliud" width="100%"/>
+	</div>
+
+{% endblock %}

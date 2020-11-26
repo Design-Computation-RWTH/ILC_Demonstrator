@@ -1,0 +1,80 @@
+{% extends "public/templates/public_template.html" %}
+
+{% block title %}mvdXML erstellen{% endblock %}
+
+{% block main %}
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+	  <h1>FAQ</h1>
+	  <hr>
+	</div>
+  </div>
+</div>
+
+<div class="container-sm">
+<form action="/faq" method="POST" enctype="multipart/form-data">
+
+	<div class="tab-content" id="faq-tab-content">
+		<div class="tab-pane show active" id="tab1" role="tabpanel" aria-labelledby="tab1">
+			<div class="accordion" id="accordion-tab-1">
+				<div class="card">
+					<div class="card-header" id="accordion-tab-1-heading-1">
+						<h5>
+							<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-1-content-1" aria-expanded="false" aria-controls="accordion-tab-1-content-1">Wer kann das Tool nutzen?</button>
+						</h5>
+					</div>
+					<div class="collapse show" id="accordion-tab-1-content-1" aria-labelledby="accordion-tab-1-heading-1" data-parent="#accordion-tab-1">
+						<div class="card-body">
+							<p>Im Prinzip jeder! Auf GitHub wird der bisherige Code zur Verfügung gestellt, so dass ihn jeder runterladen und gerne auch erweitern und/oder verbessern kann!</p>
+						</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-header" id="accordion-tab-1-heading-2">
+						<h5>
+							<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-1-content-2" aria-expanded="false" aria-controls="accordion-tab-1-content-2">Wie funktioniert das Tool?</button>
+						</h5>
+					</div>
+					<div class="collapse" id="accordion-tab-1-content-2" aria-labelledby="accordion-tab-1-heading-2" data-parent="#accordion-tab-1">
+						<div class="card-body">
+							<p>Es gibt drei Optionen, zum einen kann eine Liste hochgeladen werden und eine auf Property Sets basierte mvdXML wird erstellt. Dann ist es möglich, <strong>eine</strong> mvdXML und <strong>ein</strong> IFC Modell hochzuladen und zu prüfen. Und schließlich kann eine Tabelle und <strong>ein</strong> IFC Modell hochgeladen werden und es findet direkt ein Checking des IFC Modells nach den in der Tabelle angegebenen Kriterien statt</p>
+							<p><strong>Tabellenformate: </strong>.csv, .xlxs</p>
+							<p><strong>XML Formate: </strong>.mvdxml</p>
+							<p><strong>Modellformat: </strong>.ifc</p>
+						</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-header" id="accordion-tab-1-heading-3">
+						<h5>
+							<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-1-content-3" aria-expanded="false" aria-controls="accordion-tab-1-content-3">Welche Modellinhalte werden geprüft?</button>
+						</h5>
+					</div>
+					<div class="collapse" id="accordion-tab-1-content-3" aria-labelledby="accordion-tab-1-heading-3" data-parent="#accordion-tab-1">
+						<div class="card-body">
+							<p>Mit diesem Tool lassen sich Property Sets, Properties und entsprechende Values prüfen. Die Vorgabe entspricht der Tabellenstrucktur der Bergischen Universität Wuppertal und ist im Reiter "Über das Tool" Abgebildet.</p>
+						</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-header" id="accordion-tab-1-heading-4">
+						<h5>
+							<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-1-content-4" aria-expanded="false" aria-controls="accordion-tab-1-content-4">Wie geht es weiter?</button>
+						</h5>
+					</div>
+					<div class="collapse" id="accordion-tab-1-content-4" aria-labelledby="accordion-tab-1-heading-4" data-parent="#accordion-tab-1">
+						<div class="card-body">
+							<p>Da gibt es verschiedene Möglichkeiten. 
+								In den bisherigen Umsetzungen braucht es noch Optimierungen für einen problemlosen Prozessablauf, außerdem müssen Implementierungen optimiert werden. Über die bisherigen Umsetzungen hinaus, besteht die Möglichkeit weitere Entwicklungen wie IDM mit einzubeziehen und gesamte Prozesse in einer idmXML abzubilden. Abhängig von den Entwicklungen des IDS Projektes besteht auch hier die Möglichkeit Ideen unterzubringen. 
+								Auch andere Grundlagen wie mvdXML können auf ihre aktuellen Funktionen hin überprüft und müssen im Zweifel erweitert werden.</p>
+						</div>
+					</div>
+				</div>
+			</div>	
+		</div>
+	</div>
+
+
+{% endblock %}

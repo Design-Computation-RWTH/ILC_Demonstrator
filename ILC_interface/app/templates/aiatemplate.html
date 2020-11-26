@@ -1,0 +1,130 @@
+{% extends "public/templates/public_template.html" %}
+
+{% block title %}BIM-Anwendungen{% endblock %}
+
+{% block main %}
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+	  <h1>BIM-Anwendungen</h1>
+	  <hr>
+	  <form action="/easyxml" method="POST">
+	  </form>
+	</div>
+  </div>
+</div>
+
+<div class="container-sm">
+<form action="/faq" method="POST" enctype="multipart/form-data">
+  <div class="list-group">
+    <!-- <div class="list-group-item">
+      <div display="inline">Wartungsmanagement-Aufzugsanlage</div>
+      <div class="input-group-append" display="inline" float="right">
+        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Download</button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Druckbericht</a>
+            <a class="dropdown-item" href="#">MVD Datei</a>
+            <a class="dropdown-item" href="#">Excel Datei</a>
+          </div>
+      </div>
+    </div> -->
+    <div class="input-group">
+      <!-- <input type="text" class="form-control" aria-label="Text input with dropdown button"> -->
+      <div class="form-control">Wartungsmanagement</div>
+      <div class="input-group-append" display="inline" float="right">
+        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Download</button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Druckbericht</a>
+            <a class="dropdown-item" href="#">MVD Datei</a>
+            <a class="dropdown-item" href="#">Excel Datei</a>
+          </div>
+      </div>
+    </div>
+    <div class="input-group">
+      <!-- <input type="text" class="form-control" aria-label="Text input with dropdown button"> -->
+      <div class="form-control">Reinigungsmanagement</div>
+      <div class="input-group-append" display="inline" float="right">
+        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Download</button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Druckbericht</a>
+            <a class="dropdown-item" href="#">MVD Datei</a>
+            <a class="dropdown-item" href="#">Excel Datei</a>
+          </div>
+      </div>
+    </div>
+    <div class="input-group">
+      <!-- <input type="text" class="form-control" aria-label="Text input with dropdown button"> -->
+      <div class="form-control">Angebotskalkulation</div>
+      <div class="input-group-append" display="inline" float="right">
+        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled>Download</button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Druckbericht</a>
+            <a class="dropdown-item" href="#">MVD Datei</a>
+            <a class="dropdown-item" href="#">Excel Datei</a>
+          </div>
+      </div>
+    </div>
+    <div class="input-group">
+      <!-- <input type="text" class="form-control" aria-label="Text input with dropdown button"> -->
+      <div class="form-control">Außenanlagenpflege</div>
+      <div class="input-group-append" display="inline" float="right">
+        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled>Download</button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Druckbericht</a>
+            <a class="dropdown-item" href="#">MVD Datei</a>
+            <a class="dropdown-item" href="#">Excel Datei</a>
+          </div>
+      </div>
+    </div>
+    <div class="input-group">
+      <!-- <input type="text" class="form-control" aria-label="Text input with dropdown button"> -->
+      <div class="form-control">Inspektionsmanagement</div>
+      <div class="input-group-append" display="inline" float="right">
+        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled>Download</button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Druckbericht</a>
+            <a class="dropdown-item" href="#">MVD Datei</a>
+            <a class="dropdown-item" href="#">Excel Datei</a>
+          </div>
+      </div>
+    </div>
+    <div class="input-group">
+      <!-- <input type="text" class="form-control" aria-label="Text input with dropdown button"> -->
+      <div class="form-control">Sachverständigen Prüfung</div>
+      <div class="input-group-append" display="inline" float="right">
+        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled>Download</button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Druckbericht</a>
+            <a class="dropdown-item" href="#">MVD Datei</a>
+            <a class="dropdown-item" href="#">Excel Datei</a>
+          </div>
+      </div>
+    </div>
+    <div class="input-group">
+      <!-- <input type="text" class="form-control" aria-label="Text input with dropdown button"> -->
+      <div class="form-control">Terminplanung aus Sicht bauausf.Unternehmen in der Angebots- und Realisierungsphase</div>
+      <div class="input-group-append" display="inline" float="right">
+        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled>Download</button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Druckbericht</a>
+            <a class="dropdown-item" href="#">MVD Datei</a>
+            <a class="dropdown-item" href="#">Excel Datei</a>
+          </div>
+      </div>
+    </div>
+    <div role="separator" class="dropdown-divider"></div>
+    <div class="input-group">
+      <!-- <input type="text" class="form-control" aria-label="Text input with dropdown button"> -->
+      <div class="form-control">Leere Vorlage</div>
+      <div class="input-group-append" display="inline" float="right">
+        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Download</button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Excel Datei</a>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

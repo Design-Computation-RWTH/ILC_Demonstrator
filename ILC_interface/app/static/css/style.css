@@ -1,0 +1,137 @@
+/* allgemein */
+body{
+  border-color: #8EBAE5;
+  padding-bottom: 70px;
+}
+
+.navbar-default{
+	background-color: #8EBAE5;
+	position: fixed; 
+	top: 0; 
+	width: 100%;
+	z-index: 9999;
+}
+
+h1 {
+	font-weight: 500;
+	margin-top:100px;
+}
+
+hr {
+	padding-bottom: 20px;
+}
+
+html {
+	height: 50%;
+}
+
+/* tool seite */
+div.hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/Handwerker.png");
+
+  height: 800px;
+
+/* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Place text in the middle of the image */
+.hero-text {
+  text-align: center;
+  position: absolute;
+  font-weight: 700;
+  font-size: 50px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+/* tool seite */
+div.column {
+	float: left;
+	width: 33.3350%;
+	padding: 50px;
+	text-align: center;
+  }
+  
+.row::after {
+	content: "";
+	clear: both;
+	display: table;
+  }
+
+div.caption {
+	margin-top:25px;
+}
+
+div.item {
+	margin-top: 20px;
+	margin-bottom: 100px;
+	text-align: center;
+}
+
+.circle {
+	width: 200px;
+	height: 200px;
+	line-height: 200px;
+	border-radius: 50%;
+	font-size: 20px;
+	color: #fff;
+	text-align: center;
+	background: #000;
+	margin-top: 250px;
+	margin-left: auto;
+    margin-right: auto;
+  }
+
+
+.text-left {
+	margin-top: 100px;
+	hyphens: auto;
+	text-align: justify;
+
+}
+
+.centered {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+  }
+
+.rounded {
+	width: 200px;
+	height: 200px;
+}
+
+
+/* faq */
+.card-header {
+	padding: 15px 16px;
+	border-radius: 0;
+	background-color: white;
+}
+
+.card-header .btn {
+	font-weight: 700;
+	color: #000000	
+}
+
+.card-body {
+	color: #616161;;
+}
+
+
+/*user pages*/
+label {
+	display: block; 
+	padding-top: 20px;
+}
+
+
+

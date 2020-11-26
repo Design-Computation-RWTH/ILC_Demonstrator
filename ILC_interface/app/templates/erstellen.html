@@ -1,0 +1,44 @@
+{% extends "public/templates/public_template.html" %}
+
+{% block title %}mvdXML erstellen{% endblock %}
+
+{% block main %}
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+	  <h1>mvdXML erstellen</h1>
+	  <hr>
+	</div>
+  </div>
+</div>
+
+<div class="container-sm">
+<form action="/erstellen" method="POST" enctype="multipart/form-data">
+	
+	<div class="form-group">
+	  <label>Datei auswählen</label>
+	  <div class="custom-file">
+		<input type="file" class="custom-file-input" name="file-input" accept=
+		".csv, .xlsx" id="data-file">
+		<label class="custom-file-label" for="image">Wähle csv/ xlsx ...</label>
+	  </div>
+	</div>
+
+	{% if error_text %}
+	<div class="alert alert-danger alert-dismissible fade show" role="alert">
+		<strong>Warnung!</strong> {{ error_text }}
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		  <span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+
+	<script>
+		$('.alert').alert()
+	</script>
+	{% endif %}
+	<button type="submit" class="btn btn-secondary">Download mvdXML Datei</button>
+</form>
+</div>
+
+{% endblock %}
