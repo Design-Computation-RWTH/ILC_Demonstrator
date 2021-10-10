@@ -49,7 +49,6 @@ def read_temp_con(concept, value_type, row):
         template_rule.set_value("Value", value_type, "!=", row[10])
         test(concept, template_rule, row)
         has_comparison = True
-        return
 
 
     if row[11]: #größer
@@ -57,7 +56,6 @@ def read_temp_con(concept, value_type, row):
         template_rule.set_value("Value", value_type, escape(">"), row[11])
         test(concept, template_rule, row)
         has_comparison = True
-        return
 
 
     if row[12]: #größergleich
@@ -65,23 +63,20 @@ def read_temp_con(concept, value_type, row):
         template_rule.set_value("Value", value_type, escape(">="), row[12])
         test(concept, template_rule, row)
         has_comparison = True
-        return
 
     
     if row[13]: #kleiner
         template_rule = rules.TemplateRule()
-        template_rule.set_value("Value", value_type, escape(">="), row[13])
+        template_rule.set_value("Value", value_type, escape("<"), row[13])
         test(concept, template_rule, row)
         has_comparison = True
-        return
 
 
     if row[14]: #kleinergleich
         template_rule = rules.TemplateRule()
-        template_rule.set_value("Value", value_type, escape(">="), row[14])
+        template_rule.set_value("Value", value_type, escape("<="), row[14])
         test(concept, template_rule, row)
         has_comparison = True
-        return
 
 
     if not has_comparison:
